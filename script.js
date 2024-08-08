@@ -1,5 +1,10 @@
-//your JS code here. If required.
 document.getElementById('removeButton').addEventListener('click', function() {
     var select = document.getElementById('colorSelect');
-    select.remove(select.selectedIndex);
+    var selectedOption = select.options[select.selectedIndex];
+
+    if (selectedOption) {
+        select.removeChild(selectedOption);
+    } else {
+        alert("Please select a color to remove.");
+    }
 });
